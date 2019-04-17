@@ -31,7 +31,7 @@ before_script:
   - mix deps.get
   - nvm install 6.2 && nvm use 6.2
 script:
-  - mix test
+  - mix test || mix test --failed
   - cd installer && elixir -S mix test
   - cd ../assets && npm install && npm test
 after_script:
